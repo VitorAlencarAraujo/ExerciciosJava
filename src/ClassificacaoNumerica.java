@@ -19,6 +19,7 @@ public class ClassificacaoNumerica {
 
         String situacao;
 
+        // ser for divisivel por 10 então esse número já um número par
         if (num % 10 == 0){
             situacao = "Classe A"; // Par e múltiplo de 10
         }
