@@ -29,15 +29,39 @@ public class DeterminacaoDoMaior {
             System.out.print("Digite um número: ");
             valores[i] = sc.nextInt();
         }
+
+        /*Set<Integer> → Estrutura que não aceita valores repetidos*/
         Set<Integer> conjunto = new HashSet<>();
 
+        /*Para cada valor dentro de valores, coloque esse valor na variável v*/
         for (int v : valores){
-            if (!conjunto.add(v)){
+            if (!conjunto.add(v)){ /*conjunto recebe valores um de cada vez e verifica se
+            há repetição → Valores NÃO repetidos retornam TRUE e não entram no if
+                           Valores REPETIDOS retornam FALSE e não entram no   if
+
+            "    !    "  antes de conjunto.add significa negação e invente a lógica
+
+            Agora valores REPETIDOS retornam TRUE, o codigo executa o if que é:  */
                 System.out.println("Valores Inválidos");
-                return;
+                return; /* → Para o programa*/
             }
-
         }
+        int maior = valores[0]; /*Declaração e de uma variavel que recebe o primeiro valor
+        do ARRAY "valores" */
 
+        for (int v : valores){ /* "v" recebe um valor de valor de "valores a cada repetição*/
+
+            if (v > maior){ /*Se o valor lido em valores naquele momento for maior que o
+            primeiro valor da lista do ARRAY então a variavel "maior" recebe esse valor*/
+
+                maior = v;
+            }
+        }
+        if (maior < 0){
+            System.out.println("Maior Inválido");
+        }
+        else {
+            System.out.println("Maior: " + maior);
+        }
     }
 }
