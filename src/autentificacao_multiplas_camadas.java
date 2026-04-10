@@ -25,7 +25,7 @@ public class autentificacao_multiplas_camadas {
 
         System.out.println("Nivel de acesso: ");
         int nivel_acesso = sc.nextInt();
-        
+
 
         String tipo_de_acesso;
 
