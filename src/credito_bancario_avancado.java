@@ -57,11 +57,23 @@ public class credito_bancario_avancado {
             tipo_cliente = "Aprovado Premium";
         }
 
-        else if (renda >= 5000 && score <= 600 && historico == 1 || dependentes >= 2) {
-            tipo_cliente = "Cliente Padrão";
+        else if (dependentes > 5 && score < 700) {
+            tipo_cliente = "Negado por excesso de risco";
         }
-        
 
+        else if (renda >= 5000 && score <= 600 && historico == 1 || dependentes >= 2) {
+            tipo_cliente = "Aprovado Padrão";
+        }
+
+        else if (score >= 400 && score <= 599 || renda >= 5000 && historico == 0) {
+            tipo_cliente = "Risco Moderado";
+        }
+
+        else {
+            tipo_cliente = "Negado";
+        }
+
+        System.out.println(tipo_cliente);
 
     }
 }
